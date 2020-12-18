@@ -1,1 +1,1 @@
-Smith Tech Page - Jira Integration
+Smith Tech Page - Link to Kanban Git
