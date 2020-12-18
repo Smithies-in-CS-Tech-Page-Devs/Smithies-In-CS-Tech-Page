@@ -1,1 +1,1 @@
-Smith Tech Page - Link to Jiras
+Smith Tech Page - Jira Integration
