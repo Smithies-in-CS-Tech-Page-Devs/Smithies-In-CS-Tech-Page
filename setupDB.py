@@ -7,13 +7,15 @@ from sqlalchemy.orm import sessionmaker
 import csv
 import pandas as pd
 
-
+# app = Flask(__name__)
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
+# db = SQLAlchemy(app)
 
 Base = declarative_base()
 
 
 class Conferencedb(Base):
-    __tablename__ = 'Women in Tech Resources'
+    __tablename__ = 'womenInTechResources'
     __table_args__ = {'sqlite_autoincrement': True}
 
     id = Column(Integer, primary_key=True, nullable=False)
@@ -34,12 +36,14 @@ class Conferencedb(Base):
     latinX = Column(VARCHAR)
     firstgen = Column(VARCHAR)
 
+if __name__ == '__main__':
+    engine = create_engine('sqlite:////tmp/test.db')
+    Base.metadata.create_all(engine)
+    file_name = 'womenInTechConferences.csv'
+    df = pd.read_csv(file_name)
+    df.to_sql(name = Conferencedb.__tablename__, con=engine, index_label='id', if_exists='replace')
+    print(engine.execute("SELECT * FROM womenInTechResources").fetchall())
 
-engine = create_engine('sqlite:////tmp/test.db')
-Base.metadata.create_all(engine)
-file_name = 'womenInTechConferences.csv'
-df = pd.read_csv(file_name)
-df.to_sql(con=engine, index_label='id', name=Conferencedb.__tablename__, if_exists='replace')
 
 
 # app = Flask(__name__)
