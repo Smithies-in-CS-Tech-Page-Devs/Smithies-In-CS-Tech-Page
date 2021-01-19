@@ -1,0 +1,19 @@
+#fulfill-major-tool {
+    margin: 5%;
+}
+
+.flex-container {
+    display: flex;
+    flex-flow: row wrap;
+}
+.flex-item {
+    flex-basis: 45%;
+}
+.flex-right {
+    border-left: 2px solid black;
+    padding-left: 5%;
+}
+
+#typeahead-course-search {
+    width: 70%;
+}

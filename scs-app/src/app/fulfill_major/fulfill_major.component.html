@@ -1,1 +1,16 @@
-<div>MAJOR FULFILLMENT TOOL, {{val}}</div>
+<div id="fulfill-major-tool">
+
+<div>MAJOR FULFILLMENT TOOL</div><br><br>
+
+<div class="flex-container">
+<div class="flex-item">
+    <label for="typeahead-course-search">Search for a course:</label>
+    <input id="typeahead-course-search" type="text" class="form-control" [(ngModel)]="model" [ngbTypeahead]="search" [inputFormatter]="formatter" [resultFormatter]="formatter"/>
+    {{model.course_name | json}}
+</div>
+<div class="flex-item flex-right">
+    <p> Requirements: </p>
+</div>
+</div>
+
+</div>
