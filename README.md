@@ -12,4 +12,5 @@ Smith Tech Page
 
 ** RUNNING THE BACKEND ** 
 
- 
+** CREDIT ** 
+Homepage credit to istock.com/ma_rish 
