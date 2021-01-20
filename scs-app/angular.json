@@ -132,5 +132,8 @@
       }
     }
   },
-  "defaultProject": "scs-app"
+  "defaultProject": "scs-app",
+  "cli": {
+    "analytics": false
+  }
 }
