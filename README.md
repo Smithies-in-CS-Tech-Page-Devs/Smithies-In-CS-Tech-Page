@@ -11,6 +11,11 @@ Smith Tech Page
 1) Go into the scs-app/src and run `npm start`
 
 ** RUNNING THE BACKEND ** 
+1) under Smithies-In-CS-Tech-Page/ run `. venv/bin/activate`
+2) `export FLASK_APP=main.py` 
+3) run `pip3 install Flask` 
+4) run `pip3 install flask-cors`
+5) run `python3 -m flask run`  
 
 ** RUNNING THE DATABASE **
 1) Install Flask, Flask-SQLAlchemy, pandas
