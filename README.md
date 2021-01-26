@@ -6,10 +6,10 @@ Before starting you may have to install or import the following modules:
    pandas
    
 ** Running the Database:
-  1. Open setupDB.py file and run
+  1. Open setupDB.py and run
   
 ** Connecting Database to FlaskApp: 
-
+  1. Open connectFlask.py and run
 
 ** Resources:
    Connecting Database to FlaskApp:
