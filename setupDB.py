@@ -5,16 +5,12 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import create_engine
 import pandas as pd
 
-# app = Flask(__name__)
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
-# db = SQLAlchemy(app)
-
 Base = declarative_base()
 
 
 class ConferenceDB(Base):
     __tablename__ = 'womenInTechResources'
-    #__table_args__ = {'sqlite_autoincrement': True}
+    __table_args__ = {'sqlite_autoincrement': True}
 
     id = Column(Integer, primary_key=True, nullable=False)
     name = Column(VARCHAR(40))
