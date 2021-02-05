@@ -21,14 +21,12 @@
   <table class="table table-striped">
     <thead>
     <tr>
-      <th scope="col">#</th>
       <th scope="col">Course</th>
       <th scope="col">Grade</th>
     </tr>
     </thead>
     <tbody>
     <tr *ngFor="let course of user_courses; index as i">
-      <th scope="row">{{ i + 1 }}</th>
       <td>{{ course.course_name }}</td>
       <td>A</td>
     </tr>
