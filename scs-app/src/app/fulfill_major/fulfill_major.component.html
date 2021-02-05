@@ -1,16 +1,50 @@
 <div id="fulfill-major-tool">
 
-<div>MAJOR FULFILLMENT TOOL</div><br><br>
+<div id="title">Course Selection Tool</div><br>
+<div id="blurb">
+  <p>Get suggestions for classes that will complete your major requirements!
+    Add courses below to see which categories you still need to fulfill.
+    You can also enter the grades you've received to calculate your major GPA.</p>
+</div><br><br>
 
 <div class="flex-container">
-<div class="flex-item">
-    <label for="typeahead-course-search">Search for a course:</label>
-    <input id="typeahead-course-search" type="text" class="form-control" [(ngModel)]="model" [ngbTypeahead]="search" [inputFormatter]="formatter" [resultFormatter]="formatter"/>
-    {{model.course_name | json}}
+
+<!-- where user adds courses -->
+<div class="flex-item flex-left">
+  <label for="typeahead-course-search">Search for a course:</label>
+  <input id="typeahead-course-search" type="text" class="form-control" #input
+        (selectItem)="addCourse($event, input)"
+        [ngbTypeahead]="search"
+        [inputFormatter]="formatter" [resultFormatter]="formatter"
+  />
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Course</th>
+      <th scope="col">Grade</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let course of user_courses; index as i">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ course.course_name }}</td>
+      <td>A</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <!-- gpa shown here, if applicable -->
+  <div class="gpa"></div>
+
 </div>
+
+<!-- where requirement fulfillment is shown-->
 <div class="flex-item flex-right">
-    <p> Requirements: </p>
+  <p> Requirements: </p>
 </div>
+
 </div>
 
 </div>

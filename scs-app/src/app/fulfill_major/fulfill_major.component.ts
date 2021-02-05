@@ -13,7 +13,7 @@ import { CreditCalcService } from '../services/credit-calc/credit-calc.service';
 export class FulfillMajorComponent implements OnInit {
 
   private courselist: {course_name: string, fulfills: string}[] = [];
-  public model: any;
+  public user_courses: {course_name: string, fulfills: string}[] = [];
 
   constructor(private creditCalcService: CreditCalcService) { }
 
@@ -30,5 +30,11 @@ export class FulfillMajorComponent implements OnInit {
     )
 
   formatter = (x: {course_name: string}) => x.course_name;
+
+  addCourse(e: any, input: any) {
+    e.preventDefault();
+    this.user_courses.push(e.item);
+    input.value = '';
+  }
 
 }
