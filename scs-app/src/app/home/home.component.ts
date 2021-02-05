@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, transition, style, animate } from '@angular/animations';
+import { RestApiService } from '../rest.service';
 
 @Component({
     selector: 'app-home',
@@ -18,7 +19,12 @@ import { trigger, transition, style, animate } from '@angular/animations';
 
 export class HomeComponent implements OnInit {
 
-    ngOnInit() { }
-    constructor() { }
+    constructor(private restapiservice: RestApiService) { }
+    ngOnInit() {
+        console.log('within ngoninit');
+        console.log(this.restapiservice.getStuff());
+        console.log('done withngoninit')    
+     }
+
 
 }
