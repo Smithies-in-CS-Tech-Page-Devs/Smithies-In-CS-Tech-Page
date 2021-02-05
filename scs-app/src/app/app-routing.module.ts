@@ -6,7 +6,7 @@ import { FulfillMajorComponent } from './fulfill_major/fulfill_major.component';
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: '', component: HomeComponent },
-  { path: 'resources/fulfill_your_major', component: FulfillMajorComponent }
+  { path: 'resources/course_selection', component: FulfillMajorComponent }
 ];
 
 @NgModule({
