@@ -1,9 +1,13 @@
 from flask import Flask
 from flask import send_from_directory
 from werkzeug.routing import BaseConverter
+from flask_sqlalchemy import SQLAlchemy
 
 
 app = Flask(__name__, static_url_path="", static_folder="scs-app/dist/scs-app/")
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
+db = SQLAlchemy(app)
 
 class RegexConverter(BaseConverter):
     def __init__(self, url_map, *items):
