@@ -6,6 +6,7 @@ Smith Tech Page
 3) npm install tether --save 
 4) npm install bootstrap --save 
 5) npm install bootstrap-icons --save
+6) npm install @ng-bootstrap/ng-bootstrap --save
 
 ** RUNNING THE UI ** 
 1) Go into the scs-app/src and run `npm start`

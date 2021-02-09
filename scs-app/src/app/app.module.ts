@@ -23,7 +23,7 @@ import { FulfillMajorComponent } from './fulfill-major/fulfill-major.component';
     BrowserAnimationsModule,
     AppRoutingModule,
     NgbModule,
-    FormsModule
+    FormsModule,
     HttpClientModule
   ],
   providers: [],
