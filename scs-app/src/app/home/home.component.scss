@@ -27,3 +27,60 @@ HOME STYLING
     from, to { border-color: transparent }
     50% { border-color: #FFBC42; }
   }
+
+  .typewriter-container{
+    position: absolute; 
+    top: 10%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+  }
+  
+  .homepage-layover-container{
+    position: relative; 
+    text-align: center;
+  }
+
+  .homepage-font{
+    font-family:'Courier New', Courier, monospace;
+  }
+
+  .homepage-club-info-question{
+    text-align: center; 
+    font-size: 8vh; 
+    color: white;
+  }
+
+  .homepage-resources-container{
+    text-align: center; 
+    font-size: 20px; 
+    color: white;  
+  }
+
+  .resource-img{
+    color: white; 
+    width: 200px;
+    height: 200px;
+    opacity: 100%;
+    margin: 20px;
+  }
+
+  .contact-img{
+    color: #870058; 
+    width: 10%;
+    height: 10%;
+    opacity: 92%;
+  }
+
+  .contact-us{
+    border-top: 5px solid #870058;
+    border-bottom: 5px solid #870058;
+    color: #ffffff; 
+    text-align: center;
+    background-color: #870058;
+    opacity: 92%;
+  }
+
+  .split-half{
+    flex: 1;
+    padding: 1rem;
+  }
