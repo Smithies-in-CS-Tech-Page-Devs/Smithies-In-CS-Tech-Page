@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { FulfillMajorComponent } from './fulfill_major/fulfill_major.component';
+import { FulfillMajorComponent } from './fulfill-major/fulfill-major.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: '', component: HomeComponent },
-  { path: 'resources/course_selection', component: FulfillMajorComponent }
+  { path: 'resources/course-selection', component: FulfillMajorComponent }
 ];
 
 @NgModule({

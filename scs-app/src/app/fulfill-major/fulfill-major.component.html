@@ -1,0 +1,50 @@
+<div id="fulfill-major-tool">
+
+<div id="title">Course Selection Tool</div><br>
+<div id="blurb">
+  <p>Get suggestions for classes that will complete your major requirements!
+    Add courses below to see which categories you still need to fulfill.
+    You can also enter the grades you've received to calculate your major GPA.</p>
+</div><br><br>
+
+<div class="container">
+  <div class="row justify-content-start">
+
+    <!-- where user adds courses -->
+    <div class="col-12 col-md-6 pr-md-5">
+      <label for="typeahead-course-search">Search for a course:</label>
+      <input id="typeahead-course-search" type="text" class="form-control" #input
+            (selectItem)="addCourse($event, input)"
+            [ngbTypeahead]="search"
+            [inputFormatter]="formatter" [resultFormatter]="formatter"
+      />
+
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th scope="col">Course</th>
+          <th scope="col">Grade</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let course of userCourses; index as i">
+          <td>{{ course.courseName }}</td>
+          <td>A</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <!-- gpa shown here, if applicable -->
+      <div class="gpa"></div>
+
+    </div>
+
+    <!-- where requirement fulfillment is shown-->
+    <div class="col-12 col-md-6 pt-5 pt-md-0 pl-md-5">
+      <p> Requirements: </p>
+    </div>
+
+  </div>
+</div>
+
+</div>

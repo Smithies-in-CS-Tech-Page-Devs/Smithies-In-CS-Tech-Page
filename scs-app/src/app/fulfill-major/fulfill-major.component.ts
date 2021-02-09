@@ -6,34 +6,37 @@ import { CreditCalcService } from '../services/credit-calc/credit-calc.service';
 
 @Component({
   selector: 'fulfill-major',
-  templateUrl: './fulfill_major.component.html',
-  styleUrls: ['./fulfill_major.component.scss'],
+  templateUrl: './fulfill-major.component.html',
+  styleUrls: ['./fulfill-major.component.scss'],
   providers: [ CreditCalcService ]
 })
 export class FulfillMajorComponent implements OnInit {
 
-  private courselist: {course_name: string, fulfills: string}[] = [];
-  public user_courses: {course_name: string, fulfills: string}[] = [];
+  private courseList: {courseName: string, fulfills: string}[] = [];
+  public userCourses: {courseName: string, fulfills: string}[] = [];
 
   constructor(private creditCalcService: CreditCalcService) { }
 
   ngOnInit() {
-    this.courselist = this.creditCalcService.getCourselist();
+    this.courseList = this.creditCalcService.getCourselist();
   }
 
+  /* See ng-bootstrap docs for implementation of the typeahead search bar below:
+   * https://ng-bootstrap.github.io/#/components/typeahead/examples
+   */
   search = (text$: Observable<string>) =>
     text$.pipe(
       debounceTime(200),
       distinctUntilChanged(),
       map((term: any) => term === '' ? []
-        : this.courselist.filter((course: any) => course.course_name.toLowerCase().indexOf(term.toLowerCase()) > -1).slice(0, 10))
+        : this.courseList.filter((course: any) => course.courseName.toLowerCase().indexOf(term.toLowerCase()) > -1).slice(0, 10))
     )
 
-  formatter = (x: {course_name: string}) => x.course_name;
+  formatter = (x: {courseName: string}) => x.courseName;
 
   addCourse(e: any, input: any) {
     e.preventDefault();
-    this.user_courses.push(e.item);
+    this.userCourses.push(e.item);
     input.value = '';
   }
 
