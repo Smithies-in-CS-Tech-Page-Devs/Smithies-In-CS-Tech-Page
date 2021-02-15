@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FulfillMajorComponent } from './fulfill-major/fulfill-major.component';
+import { CheckboxComponent } from './checkbox/checkbox.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { FulfillMajorComponent } from './fulfill-major/fulfill-major.component';
     HomeComponent,
     NavbarComponent,
     FulfillMajorComponent,
+    CheckboxComponent,
   ],
   imports: [
     BrowserModule,

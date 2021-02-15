@@ -7,44 +7,92 @@
     You can also enter the grades you've received to calculate your major GPA.</p>
 </div><br><br>
 
-<div class="container">
-  <div class="row justify-content-start">
+<div class="row">
+  <div class="col-8 mb-5"> <!-- where user adds courses -->
+    <label for="typeahead-course-search">Search for a course:</label>
+    <input id="typeahead-course-search" type="text" class="form-control" #input
+          (selectItem)="addCourse($event, input)"
+          [ngbTypeahead]="search"
+          [inputFormatter]="formatter" [resultFormatter]="formatter"
+    />
+  </div>
 
-    <!-- where user adds courses -->
-    <div class="col-12 col-md-6 pr-md-5">
-      <label for="typeahead-course-search">Search for a course:</label>
-      <input id="typeahead-course-search" type="text" class="form-control" #input
-            (selectItem)="addCourse($event, input)"
-            [ngbTypeahead]="search"
-            [inputFormatter]="formatter" [resultFormatter]="formatter"
-      />
-
+  <div class="row">
+    <div class="col-8">
       <table class="table table-striped">
         <thead>
         <tr>
           <th scope="col">Course</th>
           <th scope="col">Grade</th>
+          <th scope="col">Introductory</th>
+          <th scope="col">Theory</th>
+          <th scope="col">Programming</th>
+          <th scope="col">Systems</th>
+          <th scope="col">Math</th>
+          <th scope="col">Seminar</th>
         </tr>
         </thead>
         <tbody>
         <tr *ngFor="let course of userCourses; index as i">
-          <td>{{ course.courseName }}</td>
-          <td>A</td>
+          <td>{{ course.dept + " " + course.id.toString() + " " + course.name }}</td>
+          <td>{{course.grade}}</td>
+          <td>
+            <checkbox [isChecked]=course.courseReqAndArea.isIntro></checkbox>
+          </td>
+          <td>
+            <checkbox [isChecked]=course.courseReqAndArea.isTheory></checkbox>
+          </td>
+          <td>
+            <checkbox [isChecked]=course.courseReqAndArea.isProgramming></checkbox>
+          </td>
+          <td>
+            <checkbox [isChecked]=course.courseReqAndArea.isSystems></checkbox>
+          </td>
+          <td></td>
+          <td>
+            <checkbox [isChecked]=course.courseReqAndArea.isSeminar></checkbox>
+          </td>
         </tr>
         </tbody>
       </table>
 
       <!-- gpa shown here, if applicable -->
       <div class="gpa"></div>
-
     </div>
 
     <!-- where requirement fulfillment is shown-->
-    <div class="col-12 col-md-6 pt-5 pt-md-0 pl-md-5">
-      <p> Requirements: </p>
+    <div class="col-3 ml-5">
+      <table class="table">
+        <thead class="thead">
+          <tr clas="bg-info">
+            <th scope="col">#</th>
+            <th scope="col">Requirement Satisfied?</th>
+            <th scope="col">Course</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Intro</th>
+            <td>@mdo</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>@fat</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>@twitter</td>
+            <td>@mdo</td>
+          </tr>
+        </tbody>
+      </table>
+      
     </div>
-
   </div>
+ 
+
 </div>
 
 </div>

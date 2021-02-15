@@ -1,3 +1,6 @@
+import { CourseDataType } from 'src/app/fulfill-major/course-data-type';
+import { HardCodedCourses } from 'src/app/fulfill-major/hardcoded-courses';
+
 export class CreditCalcService {
 
   /*
@@ -18,14 +21,7 @@ export class CreditCalcService {
    */
 
   // TODO currently hardcoded and incomplete
-  private courseList: {courseName: string, fulfills: string}[] = [
-    {'courseName': 'CSC 212 - Programming with Data Structures', fulfills: 'coreData'},
-    {'courseName': 'CSC 231 - Microprocessors and Assembly Language', fulfills: 'coreMicro'},
-    {'courseName': 'CSC 250 - Theoretical Foundations of Computer Science', fulfills: 'coreTheory'},
-    {'courseName': 'MTH 153 - Discrete Math', fulfills: 'mathCore'},
-    {'courseName': 'LOG 100 - Valid and Invalid Reasoning', fulfills: 'mathDiscrete'},
-    {'courseName': 'CSC 372 - Internet Censorship', fulfills: 'seminar'},
-  ]
+  private courseList: CourseDataType[] = HardCodedCourses
 
   constructor() { }
 
